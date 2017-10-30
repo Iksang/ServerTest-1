@@ -50,6 +50,8 @@ public class LoginActivity extends AppCompatActivity {
 
                                 try {
                                     if (json.getBoolean("result")) {
+                                        Toast.makeText(LoginActivity.this, json.getJSONObject("user").getString("name")+"님 로그인", Toast.LENGTH_SHORT).show();
+
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                         startActivity(intent);
                                         finish();
